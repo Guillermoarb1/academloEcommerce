@@ -58,11 +58,27 @@ function cart(db, printProducts) {
     totalDOM.innerHTML = showTotal()
   }
 
+  // function hasInventory(id, qty) {
+  //   const itemFinded = cart.find(i => i.id === id)
+    
+  //   return itemFinded.qty - qty >= 0;
+  // }
+
+  // const trueInventory = hasInventory()
+
+
+
+
   function addToCart(id, qty = 1) {
     const itemFinded = cart.find(i => i.id === id)
 
     if (itemFinded) {
-      itemFinded.qty += qty
+      if (itemFinded.qty > 0) {
+        itemFinded.qty += qty
+      } else {
+        window.alert('Ya no hay producto en Stock')
+      }
+
     } else {
       cart.push({id, qty})
     }
@@ -105,6 +121,37 @@ function cart(db, printProducts) {
     return total
   }
 
+/* ================ AGREGADO PARA MODAL ============== */
+
+  // function modalComprar() {
+  //   const modal = document.querySelector('.modal');
+  //   const btnCerrar = document.querySelector('.close');
+  //   const btnEntendido = document.querySelector('.aceptar');
+
+  //   // btnComprar.addEventListener("click", () => {
+  //   // modal.classList.add("show");
+  //   // });
+
+  //   btnCerrar.addEventListener("click", () => {
+  //   modal.classList.remove("show");
+  //   });
+
+  //   btnEntendido.addEventListener("click", () => {
+  //   modal.classList.remove("show");
+  //   });
+
+  //   window.addEventListener("click", (event) => {
+  //   if (event.target.closest === modal) {
+  //       modal.classList.remove("show");
+  //   }
+  //   });
+
+  //   document.addEventListener("keydown", (event) => {
+  //   if (event.key === "Escape" && modal.classList.contains("show")) {
+  //       modal.classList.remove("show");
+  //   }
+  //   });
+  // }
   function checkout() {
     for (const item of cart) {
       const productFinded = db.find(p => p.id === item.id)
@@ -115,6 +162,7 @@ function cart(db, printProducts) {
     printCart()
     printProducts()
     window.alert('Gracias por su compra')
+    // modalComprar()
   }
   
   printCart()

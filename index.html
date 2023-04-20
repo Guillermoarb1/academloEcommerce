@@ -21,7 +21,7 @@
   <!-- Loader -->
   <div class="loader">
     <div class="loader__container">
-      <span></span>
+      <span><img src="/assets/img/academlo.png" alt="logoAcademlo"></span>
     </div>
   </div>
 
@@ -33,7 +33,8 @@
           <path fill="currentColor"
                     d="M28.58,15.39H25.16L35.78,36H31.49L20.67,15.71,8.23,38.82H18.94l3-5.43h-3.4l-1.47,2.54h-4l2.69-5.09H25.85l4.28,8H40.67ZM17.23,28.21l3.57-6.6,3.57,6.6Z">
           </path>
-        </svg>        
+        </svg>
+        <span class="logo__text">Academlo Shop</span>       
       </a>
 
       <div class="nav__menu">
@@ -42,10 +43,19 @@
         </button>
         <ul class="nav__list">
           <li class="nav__items">
-            <a href="#" class="nav__link">Inicio</a>
+            <a href="#" class="nav__link">HOME</a>
           </li>
           <li class="nav__items">
-            <a href="#" class="nav__link">Productos</a>
+            <a href="#" class="nav__link">SHOP</a>
+          </li>
+          <li class="nav__items">
+            <a href="#" class="nav__link">MY ACCOUNT</a>
+          </li>
+          <li class="nav__items">
+            <a href="#" class="nav__link">WISHLIST</a>
+          </li>
+          <li class="nav__items">
+            <a href="#" class="nav__link">CONTACT</a>
           </li>
         </ul>
       </div>
@@ -81,14 +91,22 @@
       <div class="cart__body"></div>
       <div class="cart__footer">
         <div class="cart__count">
-          <span class="cart__count--text">Artículos</span>
+          <span class="cart__count--text">Artículos:</span>
           <span class="cart__count--item">0</span>
         </div>
         <div class="cart__total">
-          <span class="cart__total--text">Total</span>
+          <span class="cart__total--text">Total: $</span>
           <span class="cart__total--item">$0</span>
         </div>
         <button type="button" class="cart__btn btn--buy">Comprar</button>
+        <!-- Agregado para modal de compra -->
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <button id="close"  class="close" aria-label="Cerrar">&times;</button>
+            <p>¡Gracias por su compra!</p>
+            <button id="Aceptar" class="aceptar">Entendido</button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -98,13 +116,13 @@
       <div class="footer__top">
         <div class="footer__left">
           <h3 class="footer__title">Sobre Nosotros</h3>
-          <p class="footer__text">Una descripción breve del equipo, así como sus nombres completos, si trabajas solo, también escribe una descripción de ti</p>
+          <p class="footer__text">Mi nombre es Guillermo Alejandro Ramirez Benitez, todo el mundo me llama por mi apodo "Willy", soy un Ingeniero Industrial y actualmente estoy aprendiendo programacion en Academlo.</p>
         </div>
         <div class="footer__right">
           <h3 class="footer__title">Redes Sociales</h3>
           <ul class="footer__social">
             <li class="footer__item">
-              <a href="#" class="footer__link">
+              <a href="https://github.com/Guillermoarb1" target="_blank" class="footer__link">
                 <i class='bx bxl-github'></i>
               </a>
             </li>
@@ -114,7 +132,7 @@
               </a>
             </li>
             <li class="footer__item">
-              <a href="#" class="footer__link">
+              <a href="https://www.linkedin.com/in/guillermo-alejandro-ramirez-benitez-9583ab15b/" target="_blank" class="footer__link">
                 <i class='bx bxl-linkedin' ></i>
               </a>
             </li>
